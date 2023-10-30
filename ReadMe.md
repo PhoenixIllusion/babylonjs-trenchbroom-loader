@@ -1,4 +1,4 @@
-## Babylon JS TrenchBroom Editor
+## Babylon JS TrenchBroom Map Loader
 
 Map: TrenchBroom - https://github.com/TrenchBroom/TrenchBroom
 Babylon JS - https://babylonjs.com , https://github.com/BabylonJS/Babylon.js
@@ -34,15 +34,18 @@ The MapBuilder currently performs rotation to BabylonJS default orientation and 
 
 
 #### Linked Groups
-Linked Groups (treated as instances) do not have a 'primary' mesh or a requirement that any group exists at "origin". Should the original linked group be moved after creation, all copies of the group will still treat their TB Transformation matrix relative to that original location (that even if no group has any group at 0,0,0).
-Babylon FromArray loads in column-major order, so loaded arrays are transposed on-load.
-Due to instancing with a 'flips', such as an X-axis-mirror, causing faces to invert, a check is performed on the scaling matrix of the Transformation. Odd number flips will render in one model, even will render in the same model as a second flip corrects the face orientation. BabylonJS performs this same action internally on regular instanced Meshes to prevent rendering entirely as backfacing polygons.
+Linked Groups (treated as instances) do not have a 'primary' mesh or a requirement that any group exists at "origin". Should the original linked group be moved after creation, all copies of the group will still treat their TB Transformation matrix relative to that original location (that even if no group has any origin at 0,0,0).
 
-Due to the x/y/z to -y/z/x transformation above, along with the lack of any required Identity-transform linked-group, the first encountered LinkedGroup is treated as a primary model. To correct for all transformations that have been done, all matrix are passed through a transformation sequence.
-* Rotating and flip back to TrenchBroom orientation
-* Inverted against the first models transform to reset to true-origin
-* Apply the current linked-groups transformation
-* Rotate and flip back to BabylonJS orientation 
+Babylon FromArray loads in column-major order, so loaded arrays are transposed on-load.
+
+Due to Mesh instancing with an axis 'mirror/flip' causing faces to invert and back-face, such as an X-axis-mirror, a check is performed on the scaling matrix of the Transformation. Odd number flips will render as a unique model variant using Map's geometry with corrected back-faces, and even flips will render in the primary model, as a second flip will correct the face orientation back again. BabylonJS performs this same action internally on regular instanced Meshes to prevent rendering entirely as backfacing polygons.
+
+Due to the x/y/z to -y/z/x transformation on brushes above, along with the lack of any required Identity-transform linked-group, the first encountered LinkedGroup is treated as a primary model. To correct for all transformations that have been done, all matrix are passed through a transformation sequence.
+* Flip -Y/Z/X back to TrenchBroom orientation
+* Inverted against the first models transform to reset geometry to the groups true-origin
+* Apply the current linked-groups transformation-matrix 
+* Flip -Y/Z/X back to BabylonJS orientation 
+
 
 #### To Do:
 Meshes are not stored in a collection or structure during or after production.
