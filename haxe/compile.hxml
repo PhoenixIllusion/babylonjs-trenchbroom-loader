@@ -1,0 +1,10 @@
+--library hxmath
+--library hxlibmap
+-D js-es=6
+-D shallow-expose
+
+libmap.MapParser
+libmap.SurfaceGatherer
+libmap.GeoGenerator
+
+--js lib-hxmap.js

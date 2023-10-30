@@ -1,0 +1,23 @@
+{
+  "name": "babylonjs-trenchbroom-loader",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && cp -r src/hxlibmap dist/."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PhoenixIllusion/babylonjs-trenchbroom-loader"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.2"
+  },
+  "keywords": ["trenchbroom", "babylonjs"],
+  "description": "A library for loading of Trenchbroom MAP level files.",
+  "author": "Phoenix Illusion",
+  "dependencies": {
+    "@babylonjs/core": "6.25.0",
+    "@babylonjs/loaders": "6.27.0"
+  }
+}

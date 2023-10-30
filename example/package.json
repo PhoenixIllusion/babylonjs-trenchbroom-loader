@@ -1,0 +1,30 @@
+{
+  "name": "babylonjs-trenchbroom-loader-example",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PhoenixIllusion/babylonjs-trenchbroom-loader"
+  },
+  "devDependencies": {
+    "path": "0.12.7",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  },
+  "keywords": [
+    "trenchbroom",
+    "babylonjs"
+  ],
+  "description": "A library for loading of Trenchbroom MAP level files.",
+  "author": "Phoenix Illusion",
+  "dependencies": {
+    "@babylonjs/core": "6.25.0",
+    "@babylonjs/loaders": "6.27.0"
+  }
+}
