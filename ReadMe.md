@@ -1,5 +1,11 @@
 ## Babylon JS TrenchBroom Map Loader
 
+This NodeJS package allows for the parsing and reading of TrenchBroom MAP text files, and for rendering of the related data inside BabylonJS.
+
+This project is not affiliated with TrenchBroom, BabylonJS, or any linked libraries used in this package.
+
+
+#### Core Tools and Libraries
 Map: TrenchBroom - https://github.com/TrenchBroom/TrenchBroom
 Babylon JS - https://babylonjs.com , https://github.com/BabylonJS/Babylon.js
 
@@ -7,19 +13,6 @@ MAP-parsing: hxlibmap - 1.0.1 - MIT License - https://github.com/RollinBarrel/hx
 Compiled using Haxe 4.3.2 - https://haxe.org/
 
 hxlibmap Types.d file written based off original source code.
-
-
-#### Example Map:
-Creative Commons CC0 Texture Assets:
-* Concrete: https://ambientcg.com/view?id=Concrete042A
-* StonePath: https://ambientcg.com/view?id=Tiles087
-* Grass: https://ambientcg.com/view?id=Grass003
-* Other Textures: https://ambientcg.com - [asset name preserved]
-
-Models:
-* Bushes / Plant Meshes / Palm Tree: nobiax.deviantart.com / OpenGameArt.com (yughues) / ShareCG.com (yughues)
-  * C0 1.0 Universal (CC0 1.0) - Public Domain Dedication 
-
 
 ####  Description:  
 The MapLoader executes the hxlibmap.MapParser process to parse the MAP text file, then run it through the hxlibmap.GeoGenerate class to produce triangle-meshes with indexed geometry.
@@ -57,3 +50,15 @@ Scales and Rotations are not performed on ClassEntities (models)
 Currently the TrenchBroom layer and group data is stored, but is not used. Nodes/Transform Nodes can likely be used to structure the produced Meshes.
 
 These may be performed on the calling project for now. A utility functionality may be added to this package later.
+
+
+#### Example Map:
+Creative Commons CC0 Texture Assets:
+* Concrete: https://ambientcg.com/view?id=Concrete042A
+* StonePath: https://ambientcg.com/view?id=Tiles087
+* Grass: https://ambientcg.com/view?id=Grass003
+* Other Textures: https://ambientcg.com - [See License](./example/Examples-LICENSE.md)
+
+Models:
+* Bushes / Plant Meshes / Palm Tree: nobiax.deviantart.com / OpenGameArt.com (yughues) / ShareCG.com (yughues)
+  * C0 1.0 Universal (CC0 1.0) - Public Domain Dedication 
