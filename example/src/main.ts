@@ -5,11 +5,12 @@ import "@babylonjs/core/Meshes/thinInstanceMesh";
 import './style.css'
 import { MapLoader } from 'babylonjs-trenchbroom-loader/map-loader';
 import { MapSceneBuilder, MaterialResolver, MeshResolver } from 'babylonjs-trenchbroom-loader/mesh-builder';
+import { Entity, EntityGeometry } from 'babylonjs-trenchbroom-loader/hxlibmap';
 
 
 class TestMaterialResolver implements MaterialResolver {
     private _materials: Record<string,Material> = {};
-    async forName(name: string): Promise<Material>  {
+    async forTextureName(name: string): Promise<Material>  {
       const texture = name.replace('general/','');
       if(this._materials[texture]) {
         return this._materials[texture];
@@ -31,7 +32,7 @@ class TestMaterialResolver implements MaterialResolver {
 class TestMeshResolver implements MeshResolver {
     private _meshCache : Record<string, Mesh>= {};
     private _meshCacheIdx : Record<string, number>= {};
-    async forName(modelName: string): Promise<AbstractMesh|undefined> {
+    async forClassName(modelName: string): Promise<AbstractMesh|undefined> {
         if(!modelName.startsWith('model_')) {
             return undefined;
         }
@@ -62,6 +63,12 @@ class TestMeshResolver implements MeshResolver {
           })
         }
         return meshes;
+    }
+    shouldRenderEntity(_entity: Entity, _geometry: EntityGeometry): boolean {
+        return true;
+    }
+    onEntityProduced(_entity: Entity, _meshes: Mesh[]): void {
+        /* do nothing */
     }
 }
 
