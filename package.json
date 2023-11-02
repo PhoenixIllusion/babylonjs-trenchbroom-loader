@@ -22,10 +22,22 @@
     "@babylonjs/loaders": "6.27.0"
   },
   "exports": {
-    ".": "./dist/index.js",
-    "./map-loader": "./dist/map-loader.js",
-    "./mesh-builder": "./dist/mesh-builder.js",
-    "./hxlibmap": "./dist/hxlibmap/index.js"
+    ".": {
+      "default": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    } ,
+    "./map-loader": {
+      "default": "./dist/map-loader.js",
+      "types": "./dist/map-loader.d.ts"
+    },
+    "./mesh-builder": {
+      "default": "./dist/mesh-builder.js",
+      "types": "./dist/mesh-builder.d.ts"
+    }, 
+    "./hxlibmap": {
+      "default": "./dist/hxlibmap/index.js",
+      "types": "./dist/hxlibmap/index.d.ts"
+    } 
   },
   "files": [
     "README.md",
@@ -35,6 +47,8 @@
     "dist/map-loader.d.ts",
     "dist/map-loader.js",
     "dist/mesh-builder.d.ts",
-    "dist/mesh-builder.js"
+    "dist/mesh-builder.js",
+    "dist/hxlibmap/index.d.ts",
+    "dist/hxlibmap/index.js"
   ]
 }
