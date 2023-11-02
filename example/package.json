@@ -25,6 +25,7 @@
   "author": "Phoenix Illusion",
   "dependencies": {
     "@babylonjs/core": "6.25.0",
-    "@babylonjs/loaders": "6.27.0"
+    "@babylonjs/loaders": "6.27.0",
+    "@phoenixillusion/babylonjs-trenchbroom-loader": "file:.."
   }
 }

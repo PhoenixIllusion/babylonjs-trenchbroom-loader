@@ -3,10 +3,8 @@ import '@babylonjs/core/Materials/standardMaterial';
 import '@babylonjs/loaders/glTF/2.0/glTFLoader';
 import "@babylonjs/core/Meshes/thinInstanceMesh";
 import './style.css'
-import { MapLoader } from 'babylonjs-trenchbroom-loader/map-loader';
-import { MapSceneBuilder, MaterialResolver, MeshResolver } from 'babylonjs-trenchbroom-loader/mesh-builder';
-import { Entity, EntityGeometry } from 'babylonjs-trenchbroom-loader/hxlibmap';
-
+import { Entity, EntityGeometry } from '@phoenixillusion/babylonjs-trenchbroom-loader/hxlibmap'
+import { MapLoader, MapSceneBuilder, MaterialResolver, MeshResolver  } from '@phoenixillusion/babylonjs-trenchbroom-loader';
 
 class TestMaterialResolver implements MaterialResolver {
     private _materials: Record<string,Material> = {};
@@ -65,6 +63,12 @@ class TestMeshResolver implements MeshResolver {
         return meshes;
     }
     shouldRenderEntity(_entity: Entity, _geometry: EntityGeometry): boolean {
+        if(_entity.properties.h?._tb_layer) {
+            return false;
+        }
+        if(_entity.properties.h?.classname?.startsWith('collision')) {
+            return false;
+        }
         return true;
     }
     onEntityProduced(_entity: Entity, _meshes: Mesh[]): void {

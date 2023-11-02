@@ -1,7 +1,7 @@
 {
-  "name": "babylonjs-trenchbroom-loader",
+  "name": "@phoenixillusion/babylonjs-trenchbroom-loader",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "scripts": {
     "prepare": "npm run build",
@@ -20,5 +20,11 @@
   "dependencies": {
     "@babylonjs/core": "6.25.0",
     "@babylonjs/loaders": "6.27.0"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./map-loader": "./dist/map-loader.js",
+    "./mesh-builder": "./dist/mesh-builder.js",
+    "./hxlibmap": "./dist/hxlibmap/index.js"
   }
 }
