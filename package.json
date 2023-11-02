@@ -26,5 +26,15 @@
     "./map-loader": "./dist/map-loader.js",
     "./mesh-builder": "./dist/mesh-builder.js",
     "./hxlibmap": "./dist/hxlibmap/index.js"
-  }
+  },
+  "files": [
+    "README.md",
+    "haxe/hxlibmap-LICENSE",
+    "dist/index.d.ts",
+    "dist/index.js",
+    "dist/map-loader.d.ts",
+    "dist/map-loader.js",
+    "dist/mesh-builder.d.ts",
+    "dist/mesh-builder.js"
+  ]
 }
