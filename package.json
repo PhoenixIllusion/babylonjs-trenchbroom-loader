@@ -17,9 +17,9 @@
   "keywords": ["trenchbroom", "babylonjs"],
   "description": "A library for loading of Trenchbroom MAP level files.",
   "author": "Phoenix Illusion",
-  "dependencies": {
-    "@babylonjs/core": "6.25.0",
-    "@babylonjs/loaders": "6.27.0"
+  "peerDependencies": {
+    "@babylonjs/core": "6.x",
+    "@babylonjs/loaders": "6.x"
   },
   "exports": {
     ".": {
