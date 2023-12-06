@@ -3,9 +3,10 @@ import type { AbstractMesh } from "@babylonjs/core/Meshes/abstractMesh";
 import { MapData, isClassEntity, isLinkedGroup } from "./map-loader";
 import type { BrushGeometry, Entity, EntityGeometry, FaceGeometry } from "./hxlibmap";
 import { VertexData } from "@babylonjs/core/Meshes/mesh.vertexData";
-import { Mesh } from "@babylonjs/core/Meshes";
-import { Matrix,Vector3 } from "@babylonjs/core/Maths";
-import { Scene } from '@babylonjs/core/scene';
+import { Mesh } from "@babylonjs/core/Meshes/mesh";
+import '@babylonjs/core/Meshes/thinInstanceMesh';
+import { Matrix,Vector3 } from "@babylonjs/core/Maths/math.vector";
+import type { Scene } from '@babylonjs/core/scene';
 
 export interface MeshResolver {
   forClassName(name: string): Promise<AbstractMesh|undefined>;

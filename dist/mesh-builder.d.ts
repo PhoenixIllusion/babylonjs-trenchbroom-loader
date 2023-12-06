@@ -2,9 +2,10 @@ import type { Material } from "@babylonjs/core/Materials/material";
 import type { AbstractMesh } from "@babylonjs/core/Meshes/abstractMesh";
 import { MapData } from "./map-loader";
 import type { Entity, EntityGeometry } from "./hxlibmap";
-import { Mesh } from "@babylonjs/core/Meshes";
-import { Matrix } from "@babylonjs/core/Maths";
-import { Scene } from '@babylonjs/core/scene';
+import { Mesh } from "@babylonjs/core/Meshes/mesh";
+import '@babylonjs/core/Meshes/thinInstanceMesh';
+import { Matrix } from "@babylonjs/core/Maths/math.vector";
+import type { Scene } from '@babylonjs/core/scene';
 export interface MeshResolver {
     forClassName(name: string): Promise<AbstractMesh | undefined>;
     instanceLinkedGroup(entities: Matrix[], geometry: Mesh[]): Promise<AbstractMesh[]>;

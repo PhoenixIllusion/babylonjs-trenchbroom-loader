@@ -1,7 +1,8 @@
 import { isClassEntity, isLinkedGroup } from "./map-loader";
 import { VertexData } from "@babylonjs/core/Meshes/mesh.vertexData";
-import { Mesh } from "@babylonjs/core/Meshes";
-import { Matrix, Vector3 } from "@babylonjs/core/Maths";
+import { Mesh } from "@babylonjs/core/Meshes/mesh";
+import '@babylonjs/core/Meshes/thinInstanceMesh';
+import { Matrix, Vector3 } from "@babylonjs/core/Maths/math.vector";
 export class MapSceneBuilder {
     constructor(scene, materialResolver, meshResolver) {
         this.scene = scene;
